@@ -17,7 +17,6 @@ The current members of the PMC are:
 - [Jérôme Leleu](https://github.com/leleuj) [Vice Chairman]
 - [Hal Deadman](https://github.com/hdeadman)
 - [Misagh Moayyed](https://github.com/mmoayyed) [Chairman]
-- [Ian Dolphin](https://www.apereo.org/content/leadership) [Executive Director, Apereo Foundation]
 
 Emeritus members are:
 
