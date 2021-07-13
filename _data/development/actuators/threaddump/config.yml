@@ -3,15 +3,6 @@
   path: "threaddump"
   name: "threaddump"
   endpointType: "Endpoint"
-  signature: "ThreadDumpEndpoint.threadDump()"
-  owner: "org.springframework.boot.actuate.management.ThreadDumpEndpoint"
-  returnType: "ThreadDumpDescriptor"
-  casEndpoint: false
-  summary: "Produces a thread dump for the running CAS server."
-- method: "GET"
-  path: "threaddump"
-  name: "threaddump"
-  endpointType: "Endpoint"
   signature: "ThreadDumpEndpoint.textThreadDump()"
   owner: "org.springframework.boot.actuate.management.ThreadDumpEndpoint"
   returnType: "String"
@@ -19,3 +10,12 @@
   summary: "Produces a thread dump for the running CAS server."
   produces:
   - "text/plain;charset=UTF-8"
+- method: "GET"
+  path: "threaddump"
+  name: "threaddump"
+  endpointType: "Endpoint"
+  signature: "ThreadDumpEndpoint.threadDump()"
+  owner: "org.springframework.boot.actuate.management.ThreadDumpEndpoint"
+  returnType: "ThreadDumpDescriptor"
+  casEndpoint: false
+  summary: "Produces a thread dump for the running CAS server."
