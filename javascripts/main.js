@@ -128,12 +128,14 @@ function loadSidebarForActiveVersion() {
       let txt = element.text();
       element.prepend("<i class='fa fa-angle-double-right'></i>&nbsp;");
 
-      setTimeout(function(){
-        let top = $(element).offset().top;
-        // console.log("Element top position: " + top);
-        let offset = top <= 200 ? 30 : 130;
-        $("#sidebar").animate({scrollTop: offset }, 1000);
-      }, 100);
+      if (uri.fragment() == null || uri.fragment() === "") {
+        setTimeout(function(){
+          let top = $(element).offset().top;
+          // console.log("Element top position: " + top);
+          let offset = top <= 200 ? 30 : 130;
+          $("#sidebar").animate({scrollTop: offset }, 1000);
+        }, 100);
+      }
     }
   });
 }
