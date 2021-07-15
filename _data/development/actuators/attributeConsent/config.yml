@@ -1,16 +1,5 @@
 ---
 - method: "GET"
-  path: "attributeConsent/export"
-  name: "attributeConsent"
-  endpointType: "RestControllerEndpoint"
-  signature: "AttributeConsentReportEndpoint.export()"
-  owner: "org.apereo.cas.consent.AttributeConsentReportEndpoint"
-  returnType: "ResponseEntity"
-  casEndpoint: true
-  summary: "Export consent decisions as a zip file."
-  produces:
-  - "application/octet-stream"
-- method: "GET"
   path: "attributeConsent/{principal}"
   name: "attributeConsent"
   endpointType: "RestControllerEndpoint"
@@ -24,6 +13,17 @@
     required: true
   produces:
   - "application/json"
+- method: "GET"
+  path: "attributeConsent/export"
+  name: "attributeConsent"
+  endpointType: "RestControllerEndpoint"
+  signature: "AttributeConsentReportEndpoint.export()"
+  owner: "org.apereo.cas.consent.AttributeConsentReportEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Export consent decisions as a zip file."
+  produces:
+  - "application/octet-stream"
 - method: "DELETE"
   path: "attributeConsent/{principal}/{decisionId}"
   name: "attributeConsent"

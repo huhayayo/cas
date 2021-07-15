@@ -1,19 +1,19 @@
 ---
 - method: "GET"
-  path: "health"
+  path: "health/{path}"
   name: "health"
   endpointType: "Endpoint"
-  signature: "HealthEndpoint.health()"
+  signature: "HealthEndpoint.healthForPath(java.lang.String...)"
   owner: "org.springframework.boot.actuate.health.HealthEndpoint"
   returnType: "HealthComponent"
   casEndpoint: false
   summary: "Reports back general health status of the system, produced by various\
     \ monitors."
 - method: "GET"
-  path: "health/{path}"
+  path: "health"
   name: "health"
   endpointType: "Endpoint"
-  signature: "HealthEndpoint.healthForPath(java.lang.String...)"
+  signature: "HealthEndpoint.health()"
   owner: "org.springframework.boot.actuate.health.HealthEndpoint"
   returnType: "HealthComponent"
   casEndpoint: false

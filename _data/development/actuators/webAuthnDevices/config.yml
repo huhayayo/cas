@@ -1,16 +1,5 @@
 ---
 - method: "GET"
-  path: "webAuthnDevices/export"
-  name: "webAuthnDevices"
-  endpointType: "RestControllerEndpoint"
-  signature: "WebAuthnRegisteredDevicesEndpoint.export()"
-  owner: "org.apereo.cas.webauthn.web.WebAuthnRegisteredDevicesEndpoint"
-  returnType: "ResponseEntity"
-  casEndpoint: true
-  summary: "Export device registrations as a zip file."
-  produces:
-  - "application/octet-stream"
-- method: "GET"
   path: "webAuthnDevices/{username}"
   name: "webAuthnDevices"
   endpointType: "RestControllerEndpoint"
@@ -24,6 +13,17 @@
     required: true
   produces:
   - "application/json"
+- method: "GET"
+  path: "webAuthnDevices/export"
+  name: "webAuthnDevices"
+  endpointType: "RestControllerEndpoint"
+  signature: "WebAuthnRegisteredDevicesEndpoint.export()"
+  owner: "org.apereo.cas.webauthn.web.WebAuthnRegisteredDevicesEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Export device registrations as a zip file."
+  produces:
+  - "application/octet-stream"
 - method: "DELETE"
   path: "webAuthnDevices/{username}"
   name: "webAuthnDevices"
