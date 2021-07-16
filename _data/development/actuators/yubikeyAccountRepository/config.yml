@@ -1,16 +1,5 @@
 ---
 - method: "GET"
-  path: "yubikeyAccountRepository/export"
-  name: "yubikeyAccountRepository"
-  endpointType: "RestControllerEndpoint"
-  signature: "YubiKeyAccountRegistryEndpoint.export()"
-  owner: "org.apereo.cas.adaptors.yubikey.registry.YubiKeyAccountRegistryEndpoint"
-  returnType: "ResponseEntity"
-  casEndpoint: true
-  summary: "Export all Yubikey accounts as a zip file."
-  produces:
-  - "application/octet-stream"
-- method: "GET"
   path: "yubikeyAccountRepository/{username}"
   name: "yubikeyAccountRepository"
   endpointType: "RestControllerEndpoint"
@@ -35,16 +24,17 @@
   summary: "Get all Yubikey accounts."
   produces:
   - "application/json"
-- method: "DELETE"
-  path: "yubikeyAccountRepository"
+- method: "GET"
+  path: "yubikeyAccountRepository/export"
   name: "yubikeyAccountRepository"
   endpointType: "RestControllerEndpoint"
-  signature: "YubiKeyAccountRegistryEndpoint.deleteAll()"
+  signature: "YubiKeyAccountRegistryEndpoint.export()"
   owner: "org.apereo.cas.adaptors.yubikey.registry.YubiKeyAccountRegistryEndpoint"
+  returnType: "ResponseEntity"
   casEndpoint: true
-  summary: "Delete all Yubikey accounts."
+  summary: "Export all Yubikey accounts as a zip file."
   produces:
-  - "application/json"
+  - "application/octet-stream"
 - method: "DELETE"
   path: "yubikeyAccountRepository/{username}"
   name: "yubikeyAccountRepository"
@@ -56,6 +46,16 @@
   parameters:
   - name: "username"
     required: true
+  produces:
+  - "application/json"
+- method: "DELETE"
+  path: "yubikeyAccountRepository"
+  name: "yubikeyAccountRepository"
+  endpointType: "RestControllerEndpoint"
+  signature: "YubiKeyAccountRegistryEndpoint.deleteAll()"
+  owner: "org.apereo.cas.adaptors.yubikey.registry.YubiKeyAccountRegistryEndpoint"
+  casEndpoint: true
+  summary: "Delete all Yubikey accounts."
   produces:
   - "application/json"
 - method: "POST"

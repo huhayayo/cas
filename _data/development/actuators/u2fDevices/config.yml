@@ -1,5 +1,16 @@
 ---
 - method: "GET"
+  path: "u2fDevices"
+  name: "u2fDevices"
+  endpointType: "Endpoint"
+  signature: "U2FRegisteredDevicesEndpoint.fetchAll()"
+  owner: "org.apereo.cas.adaptors.u2f.web.U2FRegisteredDevicesEndpoint"
+  returnType: "Collection"
+  casEndpoint: true
+  summary: "Get all registered devices."
+  produces:
+  - "application/json"
+- method: "GET"
   path: "u2fDevices/{username}"
   name: "u2fDevices"
   endpointType: "Endpoint"
@@ -11,17 +22,6 @@
   parameters:
   - name: "username"
     required: true
-  produces:
-  - "application/json"
-- method: "GET"
-  path: "u2fDevices"
-  name: "u2fDevices"
-  endpointType: "Endpoint"
-  signature: "U2FRegisteredDevicesEndpoint.fetchAll()"
-  owner: "org.apereo.cas.adaptors.u2f.web.U2FRegisteredDevicesEndpoint"
-  returnType: "Collection"
-  casEndpoint: true
-  summary: "Get all registered devices."
   produces:
   - "application/json"
 - method: "DELETE"

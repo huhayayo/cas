@@ -1,5 +1,18 @@
 ---
 - method: "GET"
+  path: "registeredServices"
+  name: "registeredServices"
+  endpointType: "RestControllerEndpoint"
+  signature: "RegisteredServicesEndpoint.handle() "
+  owner: "org.apereo.cas.web.report.RegisteredServicesEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Handle and produce a list of services from registry."
+  produces:
+  - "application/vnd.spring-boot.actuator.v2+json"
+  - "application/vnd.cas.services+yaml"
+  - "application/json"
+- method: "GET"
   path: "registeredServices/export"
   name: "registeredServices"
   endpointType: "RestControllerEndpoint"
@@ -22,19 +35,6 @@
   parameters:
   - name: "id"
     required: true
-  produces:
-  - "application/vnd.spring-boot.actuator.v2+json"
-  - "application/vnd.cas.services+yaml"
-  - "application/json"
-- method: "GET"
-  path: "registeredServices"
-  name: "registeredServices"
-  endpointType: "RestControllerEndpoint"
-  signature: "RegisteredServicesEndpoint.handle() "
-  owner: "org.apereo.cas.web.report.RegisteredServicesEndpoint"
-  returnType: "ResponseEntity"
-  casEndpoint: true
-  summary: "Handle and produce a list of services from registry."
   produces:
   - "application/vnd.spring-boot.actuator.v2+json"
   - "application/vnd.cas.services+yaml"
