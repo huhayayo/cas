@@ -25,21 +25,6 @@
   produces:
   - "application/json"
 - method: "DELETE"
-  path: "webAuthnDevices/{username}/{credentialId}"
-  name: "webAuthnDevices"
-  endpointType: "RestControllerEndpoint"
-  signature: "WebAuthnRegisteredDevicesEndpoint.delete(java.lang.String,java.lang.String) "
-  owner: "org.apereo.cas.webauthn.web.WebAuthnRegisteredDevicesEndpoint"
-  casEndpoint: true
-  summary: "Remove device registration for username and credential id."
-  parameters:
-  - name: "username"
-    required: true
-  - name: "credentialId"
-    required: true
-  produces:
-  - "application/json"
-- method: "DELETE"
   path: "webAuthnDevices/{username}"
   name: "webAuthnDevices"
   endpointType: "RestControllerEndpoint"
@@ -52,19 +37,18 @@
     required: true
   produces:
   - "application/json"
-- method: "POST"
-  path: "webAuthnDevices/{username}"
+- method: "DELETE"
+  path: "webAuthnDevices/{username}/{credentialId}"
   name: "webAuthnDevices"
   endpointType: "RestControllerEndpoint"
-  signature: "WebAuthnRegisteredDevicesEndpoint.write(java.lang.String,java.lang.String) "
+  signature: "WebAuthnRegisteredDevicesEndpoint.delete(java.lang.String,java.lang.String) "
   owner: "org.apereo.cas.webauthn.web.WebAuthnRegisteredDevicesEndpoint"
-  returnType: "boolean"
   casEndpoint: true
-  summary: "Add device registration for username."
+  summary: "Remove device registration for username and credential id."
   parameters:
   - name: "username"
     required: true
-  - name: "record"
+  - name: "credentialId"
     required: true
   produces:
   - "application/json"
@@ -81,4 +65,20 @@
   - name: "request"
     required: true
   consumes:
+  - "application/json"
+- method: "POST"
+  path: "webAuthnDevices/{username}"
+  name: "webAuthnDevices"
+  endpointType: "RestControllerEndpoint"
+  signature: "WebAuthnRegisteredDevicesEndpoint.write(java.lang.String,java.lang.String) "
+  owner: "org.apereo.cas.webauthn.web.WebAuthnRegisteredDevicesEndpoint"
+  returnType: "boolean"
+  casEndpoint: true
+  summary: "Add device registration for username."
+  parameters:
+  - name: "username"
+    required: true
+  - name: "record"
+    required: true
+  produces:
   - "application/json"

@@ -1561,6 +1561,16 @@
     \ http port instead of on the application http port."
   name: "javamelody.management-endpoint-monitoring-enabled"
   defaultValue: false
+- owner: "net.bull.javamelody.JavaMelodyConfigurationProperties"
+  type: "java.lang.Boolean"
+  description: "If monitoring based on @RestController, @Controller, @Service, @Async,\
+    \ @Scheduled, @MonitoredWithSpring,  @FeignClient or on RestTemplate, MongoDatabaseFactory\
+    \ or ElasticsearchOperations should be enabled."
+  shortDescription: "If monitoring based on @RestController, @Controller, @Service,\
+    \ @Async, @Scheduled, @MonitoredWithSpring,  @FeignClient or on RestTemplate,\
+    \ MongoDatabaseFactory or ElasticsearchOperations should be enabled."
+  name: "javamelody.spring-monitoring-enabled"
+  defaultValue: true
 - type: "java.nio.charset.Charset"
   description: "Charset to use for console output."
   shortDescription: "Charset to use for console output."
@@ -2133,6 +2143,12 @@
   shortDescription: "Whether to enable the metrics endpoint."
   name: "management.endpoint.metrics.enabled"
   defaultValue: true
+- owner: "net.bull.javamelody.MonitoringEndpoint"
+  type: "java.time.Duration"
+  description: "Maximum time that a response can be cached."
+  shortDescription: "Maximum time that a response can be cached."
+  name: "management.endpoint.monitoring.cache.time-to-live"
+  defaultValue: "0ms"
 - owner: "net.bull.javamelody.MonitoringEndpoint"
   type: "java.lang.Boolean"
   description: "Whether to enable the monitoring endpoint."
@@ -15301,7 +15317,7 @@
   description: "Level of leak detection for reference-counted buffers."
   shortDescription: "Level of leak detection for reference-counted buffers."
   name: "spring.netty.leak-detection"
-  defaultValue: "disabled"
+  defaultValue: "simple"
 - type: "org.springframework.boot.ansi.AnsiOutput$Enabled"
   description: "Configures the ANSI output."
   shortDescription: "Configures the ANSI output."
