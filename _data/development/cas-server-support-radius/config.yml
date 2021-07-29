@@ -37,6 +37,16 @@
   name: "cas.authn.mfa.radius.client.socket-timeout"
   defaultValue: 0
 - module: "cas-server-support-radius"
+  owner: "org.apereo.cas.configuration.model.support.radius.RadiusClientProperties"
+  type: "org.apereo.cas.configuration.model.support.radius.RadiusClientProperties$RadiusClientTransportTypes"
+  description: "Transport type to use by this client to connect to the server.\nAvailable\
+    \ values are as follows:\n<ul><li>{@code UDP}: Default. UDP client transport type.</li><li>{@code\
+    \ RADSEC}: RadSec is a protocol which allows RADIUS servers to\ntransfer data\
+    \ over TCP and TLS for increased security.</li></ul>"
+  shortDescription: "Transport type to use by this client to connect to the server."
+  name: "cas.authn.mfa.radius.client.transport-type"
+  defaultValue: "UDP"
+- module: "cas-server-support-radius"
   owner: "org.apereo.cas.configuration.model.support.radius.RadiusServerProperties"
   type: "java.lang.String"
   description: "The NAS identifier."
@@ -138,6 +148,16 @@
   shortDescription: "Socket connection timeout in milliseconds."
   name: "cas.authn.radius.client.socket-timeout"
   defaultValue: 0
+- module: "cas-server-support-radius"
+  owner: "org.apereo.cas.configuration.model.support.radius.RadiusClientProperties"
+  type: "org.apereo.cas.configuration.model.support.radius.RadiusClientProperties$RadiusClientTransportTypes"
+  description: "Transport type to use by this client to connect to the server.\nAvailable\
+    \ values are as follows:\n<ul><li>{@code UDP}: Default. UDP client transport type.</li><li>{@code\
+    \ RADSEC}: RadSec is a protocol which allows RADIUS servers to\ntransfer data\
+    \ over TCP and TLS for increased security.</li></ul>"
+  shortDescription: "Transport type to use by this client to connect to the server."
+  name: "cas.authn.radius.client.transport-type"
+  defaultValue: "UDP"
 - module: "cas-server-support-radius"
   owner: "org.apereo.cas.configuration.model.support.radius.RadiusProperties"
   type: "java.lang.Boolean"
