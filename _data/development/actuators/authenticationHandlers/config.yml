@@ -1,5 +1,18 @@
 ---
 - method: "GET"
+  path: "authenticationHandlers"
+  name: "authenticationHandlers"
+  endpointType: "Endpoint"
+  signature: "RegisteredAuthenticationHandlersEndpoint.handle()"
+  owner: "org.apereo.cas.web.report.RegisteredAuthenticationHandlersEndpoint"
+  returnType: "Collection"
+  casEndpoint: true
+  summary: "Get collection of available authentication handlers."
+  produces:
+  - "application/vnd.spring-boot.actuator.v2+json"
+  - "application/vnd.cas.services+yaml"
+  - "application/json"
+- method: "GET"
   path: "authenticationHandlers/{name}"
   name: "authenticationHandlers"
   endpointType: "Endpoint"
@@ -11,19 +24,6 @@
   parameters:
   - name: "name"
     required: true
-  produces:
-  - "application/vnd.spring-boot.actuator.v2+json"
-  - "application/vnd.cas.services+yaml"
-  - "application/json"
-- method: "GET"
-  path: "authenticationHandlers"
-  name: "authenticationHandlers"
-  endpointType: "Endpoint"
-  signature: "RegisteredAuthenticationHandlersEndpoint.handle()"
-  owner: "org.apereo.cas.web.report.RegisteredAuthenticationHandlersEndpoint"
-  returnType: "Collection"
-  casEndpoint: true
-  summary: "Get collection of available authentication handlers."
   produces:
   - "application/vnd.spring-boot.actuator.v2+json"
   - "application/vnd.cas.services+yaml"

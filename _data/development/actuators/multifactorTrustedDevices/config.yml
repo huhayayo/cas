@@ -1,14 +1,5 @@
 ---
 - method: "GET"
-  path: "multifactorTrustedDevices"
-  name: "multifactorTrustedDevices"
-  endpointType: "Endpoint"
-  signature: "MultifactorAuthenticationTrustReportEndpoint.devices()"
-  owner: "org.apereo.cas.trusted.web.MultifactorAuthenticationTrustReportEndpoint"
-  returnType: "Set"
-  casEndpoint: true
-  summary: "Get collection of trusted devices."
-- method: "GET"
   path: "multifactorTrustedDevices/{username}"
   name: "multifactorTrustedDevices"
   endpointType: "Endpoint"
@@ -20,6 +11,15 @@
   parameters:
   - name: "username"
     required: true
+- method: "GET"
+  path: "multifactorTrustedDevices"
+  name: "multifactorTrustedDevices"
+  endpointType: "Endpoint"
+  signature: "MultifactorAuthenticationTrustReportEndpoint.devices()"
+  owner: "org.apereo.cas.trusted.web.MultifactorAuthenticationTrustReportEndpoint"
+  returnType: "Set"
+  casEndpoint: true
+  summary: "Get collection of trusted devices."
 - method: "DELETE"
   path: "multifactorTrustedDevices/{key}"
   name: "multifactorTrustedDevices"
