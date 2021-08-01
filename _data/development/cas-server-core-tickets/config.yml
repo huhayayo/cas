@@ -182,6 +182,13 @@
   defaultValue: 0
 - module: "cas-server-core-tickets"
   owner: "org.apereo.cas.configuration.model.core.ticket.TransientSessionTicketProperties"
+  type: "java.lang.Integer"
+  description: "Controls number of times a ticket can be used within CAS server."
+  shortDescription: "Controls number of times a ticket can be used within CAS server."
+  name: "cas.ticket.tst.number-of-uses"
+  defaultValue: 1
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.TransientSessionTicketProperties"
   type: "java.lang.Long"
   description: "Number of seconds after which this ticket becomes invalid."
   shortDescription: "Number of seconds after which this ticket becomes invalid."
