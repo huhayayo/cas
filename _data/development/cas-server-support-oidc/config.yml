@@ -100,6 +100,13 @@
   defaultValue: ""
 - module: "cas-server-support-oidc"
   owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.lang.Boolean"
+  description: "Specifying whether this provider supports use of the claims parameter."
+  shortDescription: "Specifying whether this provider supports use of the claims parameter."
+  name: "cas.authn.oidc.discovery.claims-parameter-supported"
+  defaultValue: true
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
   type: "java.util.List<java.lang.String>"
   description: "List of PKCE code challenge methods supported."
   shortDescription: "List of PKCE code challenge methods supported."
@@ -161,6 +168,24 @@
   shortDescription: "Supported algorithms for request object signing."
   name: "cas.authn.oidc.discovery.request-object-signing-alg-values-supported"
   defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.lang.Boolean"
+  description: "Specifying whether this provider supports use of the {@code request}\
+    \ parameter."
+  shortDescription: "Specifying whether this provider supports use of the {@code request}\
+    \ parameter."
+  name: "cas.authn.oidc.discovery.request-parameter-supported"
+  defaultValue: true
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.lang.Boolean"
+  description: "Specifying whether this provider supports use of the {@code request_uri}\
+    \ parameter."
+  shortDescription: "Specifying whether this provider supports use of the {@code request_uri}\
+    \ parameter."
+  name: "cas.authn.oidc.discovery.request-uri-parameter-supported"
+  defaultValue: true
 - module: "cas-server-support-oidc"
   owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
   type: "java.util.List<java.lang.String>"

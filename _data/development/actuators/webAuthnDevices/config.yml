@@ -25,19 +25,6 @@
   produces:
   - "application/json"
 - method: "DELETE"
-  path: "webAuthnDevices/{username}"
-  name: "webAuthnDevices"
-  endpointType: "RestControllerEndpoint"
-  signature: "WebAuthnRegisteredDevicesEndpoint.delete(java.lang.String)"
-  owner: "org.apereo.cas.webauthn.web.WebAuthnRegisteredDevicesEndpoint"
-  casEndpoint: true
-  summary: "Remove device registrations for username."
-  parameters:
-  - name: "username"
-    required: true
-  produces:
-  - "application/json"
-- method: "DELETE"
   path: "webAuthnDevices/{username}/{credentialId}"
   name: "webAuthnDevices"
   endpointType: "RestControllerEndpoint"
@@ -52,19 +39,18 @@
     required: true
   produces:
   - "application/json"
-- method: "POST"
-  path: "webAuthnDevices/import"
+- method: "DELETE"
+  path: "webAuthnDevices/{username}"
   name: "webAuthnDevices"
   endpointType: "RestControllerEndpoint"
-  signature: "WebAuthnRegisteredDevicesEndpoint.importAccount(javax.servlet.http.HttpServletRequest) "
+  signature: "WebAuthnRegisteredDevicesEndpoint.delete(java.lang.String)"
   owner: "org.apereo.cas.webauthn.web.WebAuthnRegisteredDevicesEndpoint"
-  returnType: "HttpStatus"
   casEndpoint: true
-  summary: "Import a device registration as a JSON document."
+  summary: "Remove device registrations for username."
   parameters:
-  - name: "request"
+  - name: "username"
     required: true
-  consumes:
+  produces:
   - "application/json"
 - method: "POST"
   path: "webAuthnDevices/{username}"
@@ -81,4 +67,18 @@
   - name: "record"
     required: true
   produces:
+  - "application/json"
+- method: "POST"
+  path: "webAuthnDevices/import"
+  name: "webAuthnDevices"
+  endpointType: "RestControllerEndpoint"
+  signature: "WebAuthnRegisteredDevicesEndpoint.importAccount(javax.servlet.http.HttpServletRequest) "
+  owner: "org.apereo.cas.webauthn.web.WebAuthnRegisteredDevicesEndpoint"
+  returnType: "HttpStatus"
+  casEndpoint: true
+  summary: "Import a device registration as a JSON document."
+  parameters:
+  - name: "request"
+    required: true
+  consumes:
   - "application/json"

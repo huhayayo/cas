@@ -1,14 +1,5 @@
 ---
 - method: "GET"
-  path: "configurationMetadata"
-  name: "configurationMetadata"
-  endpointType: "Endpoint"
-  signature: "CasConfigurationMetadataServerEndpoint.properties()"
-  owner: "org.apereo.cas.metadata.rest.CasConfigurationMetadataServerEndpoint"
-  returnType: "Map"
-  casEndpoint: true
-  summary: "Get all properties from the repository."
-- method: "GET"
   path: "configurationMetadata/{name}"
   name: "configurationMetadata"
   endpointType: "Endpoint"
@@ -20,3 +11,12 @@
   parameters:
   - name: "name"
     required: true
+- method: "GET"
+  path: "configurationMetadata"
+  name: "configurationMetadata"
+  endpointType: "Endpoint"
+  signature: "CasConfigurationMetadataServerEndpoint.properties()"
+  owner: "org.apereo.cas.metadata.rest.CasConfigurationMetadataServerEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Get all properties from the repository."

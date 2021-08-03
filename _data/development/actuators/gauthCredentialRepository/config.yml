@@ -1,16 +1,5 @@
 ---
 - method: "GET"
-  path: "gauthCredentialRepository/export"
-  name: "gauthCredentialRepository"
-  endpointType: "RestControllerEndpoint"
-  signature: "GoogleAuthenticatorTokenCredentialRepositoryEndpoint.exportAccounts()"
-  owner: "org.apereo.cas.gauth.credential.GoogleAuthenticatorTokenCredentialRepositoryEndpoint"
-  returnType: "ResponseEntity"
-  casEndpoint: true
-  summary: "Export accounts as a zip file."
-  produces:
-  - "application/octet-stream"
-- method: "GET"
   path: "gauthCredentialRepository/{username}"
   name: "gauthCredentialRepository"
   endpointType: "RestControllerEndpoint"
@@ -35,16 +24,17 @@
   summary: "Load and get all accounts."
   produces:
   - "application/json"
-- method: "DELETE"
-  path: "gauthCredentialRepository"
+- method: "GET"
+  path: "gauthCredentialRepository/export"
   name: "gauthCredentialRepository"
   endpointType: "RestControllerEndpoint"
-  signature: "GoogleAuthenticatorTokenCredentialRepositoryEndpoint.deleteAll()"
+  signature: "GoogleAuthenticatorTokenCredentialRepositoryEndpoint.exportAccounts()"
   owner: "org.apereo.cas.gauth.credential.GoogleAuthenticatorTokenCredentialRepositoryEndpoint"
+  returnType: "ResponseEntity"
   casEndpoint: true
-  summary: "Delete all accounts."
+  summary: "Export accounts as a zip file."
   produces:
-  - "application/json"
+  - "application/octet-stream"
 - method: "DELETE"
   path: "gauthCredentialRepository/{username}"
   name: "gauthCredentialRepository"
@@ -56,6 +46,16 @@
   parameters:
   - name: "username"
     required: true
+  produces:
+  - "application/json"
+- method: "DELETE"
+  path: "gauthCredentialRepository"
+  name: "gauthCredentialRepository"
+  endpointType: "RestControllerEndpoint"
+  signature: "GoogleAuthenticatorTokenCredentialRepositoryEndpoint.deleteAll()"
+  owner: "org.apereo.cas.gauth.credential.GoogleAuthenticatorTokenCredentialRepositoryEndpoint"
+  casEndpoint: true
+  summary: "Delete all accounts."
   produces:
   - "application/json"
 - method: "POST"
